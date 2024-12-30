@@ -1,0 +1,17 @@
+import boto3
+
+client = boto3.client('s3')
+
+# Create the bucket
+response = client.create_bucket(
+    Bucket="dmo-yt-venu"
+)
+
+# The response is a dictionary-like object, so you can directly access it
+# For example, you can print the response to check what it contains
+demo = response
+
+# Iterate through the response and print each key-value pair
+for i in demo:
+    print(i["location"])
+
